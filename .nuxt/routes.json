@@ -1,0 +1,51 @@
+[
+  {
+    "path": "/",
+    "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/layout",
+    "children": [
+      {
+        "path": "",
+        "name": "home",
+        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/home",
+        "_name": "_d90d004a"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/login",
+        "_name": "_48227826"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/login",
+        "_name": "_48227826"
+      },
+      {
+        "path": "/profile/:username",
+        "name": "profile",
+        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/profile",
+        "_name": "_74744d2d"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/settings",
+        "_name": "_a9552dc2"
+      },
+      {
+        "path": "/editor",
+        "name": "editor",
+        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/editor",
+        "_name": "_d544452e"
+      },
+      {
+        "path": "/article/:slug",
+        "name": "article",
+        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/article",
+        "_name": "_5b3e907a"
+      }
+    ],
+    "_name": "_bda691b4"
+  }
+]
