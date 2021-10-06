@@ -1528,19 +1528,19 @@ function shouldScrollToTop(route) {
 
 
 
-const _bda691b4 = () => interopDefault(__webpack_require__.e(/* import() */ 7).then(__webpack_require__.bind(null, 34)));
+const _7bdd2026 = () => interopDefault(__webpack_require__.e(/* import() */ 7).then(__webpack_require__.bind(null, 34)));
 
-const _d90d004a = () => interopDefault(__webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 33)));
+const _013028db = () => interopDefault(__webpack_require__.e(/* import() */ 2).then(__webpack_require__.bind(null, 33)));
 
-const _48227826 = () => interopDefault(__webpack_require__.e(/* import() */ 3).then(__webpack_require__.bind(null, 35)));
+const _250d3aed = () => interopDefault(__webpack_require__.e(/* import() */ 3).then(__webpack_require__.bind(null, 35)));
 
-const _74744d2d = () => interopDefault(__webpack_require__.e(/* import() */ 4).then(__webpack_require__.bind(null, 36)));
+const _205df7a6 = () => interopDefault(__webpack_require__.e(/* import() */ 4).then(__webpack_require__.bind(null, 36)));
 
-const _a9552dc2 = () => interopDefault(__webpack_require__.e(/* import() */ 5).then(__webpack_require__.bind(null, 37)));
+const _c8e0dbc2 = () => interopDefault(__webpack_require__.e(/* import() */ 5).then(__webpack_require__.bind(null, 37)));
 
-const _d544452e = () => interopDefault(__webpack_require__.e(/* import() */ 6).then(__webpack_require__.bind(null, 38)));
+const _700e4669 = () => interopDefault(__webpack_require__.e(/* import() */ 6).then(__webpack_require__.bind(null, 38)));
 
-const _5b3e907a = () => interopDefault(__webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 32)));
+const _52c9710c = () => interopDefault(__webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 32)));
 
 const emptyFn = () => {};
 
@@ -1553,34 +1553,34 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/",
-    component: _bda691b4,
+    component: _7bdd2026,
     children: [{
       path: "",
-      component: _d90d004a,
+      component: _013028db,
       name: "home"
     }, {
       path: "/login",
-      component: _48227826,
+      component: _250d3aed,
       name: "login"
     }, {
       path: "/register",
-      component: _48227826,
+      component: _250d3aed,
       name: "register"
     }, {
       path: "/profile/:username",
-      component: _74744d2d,
+      component: _205df7a6,
       name: "profile"
     }, {
       path: "/settings",
-      component: _a9552dc2,
+      component: _c8e0dbc2,
       name: "settings"
     }, {
       path: "/editor",
-      component: _d544452e,
+      component: _700e4669,
       name: "editor"
     }, {
       path: "/article/:slug",
-      component: _5b3e907a,
+      component: _52c9710c,
       name: "article"
     }]
   }],
@@ -1779,7 +1779,7 @@ var nuxt_error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "537ec160"
+  "63fda4f0"
   
 )
 
@@ -2083,7 +2083,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "8225eef8"
+  "5d01b3b8"
   
 )
 
@@ -2109,7 +2109,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "1e962918"
+  "88e2add8"
   
 )
 

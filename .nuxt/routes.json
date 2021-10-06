@@ -1,51 +1,51 @@
 [
   {
     "path": "/",
-    "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/layout",
+    "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/layout",
     "children": [
       {
         "path": "",
         "name": "home",
-        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/home",
-        "_name": "_d90d004a"
+        "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/home",
+        "_name": "_013028db"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/login",
-        "_name": "_48227826"
+        "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/login",
+        "_name": "_250d3aed"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/login",
-        "_name": "_48227826"
+        "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/login",
+        "_name": "_250d3aed"
       },
       {
         "path": "/profile/:username",
         "name": "profile",
-        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/profile",
-        "_name": "_74744d2d"
+        "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/profile",
+        "_name": "_205df7a6"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/settings",
-        "_name": "_a9552dc2"
+        "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/settings",
+        "_name": "_c8e0dbc2"
       },
       {
         "path": "/editor",
         "name": "editor",
-        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/editor",
-        "_name": "_d544452e"
+        "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/editor",
+        "_name": "_700e4669"
       },
       {
         "path": "/article/:slug",
         "name": "article",
-        "component": "/Users/lizhuohua/前端训练营/realworl-nuxt/pages/article",
-        "_name": "_5b3e907a"
+        "component": "/Users/lizhuohua/前端训练营/realworld-nuxt/pages/article",
+        "_name": "_52c9710c"
       }
     ],
-    "_name": "_bda691b4"
+    "_name": "_7bdd2026"
   }
 ]
