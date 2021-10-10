@@ -18,9 +18,19 @@ export const getFeedArticles = params => {
   })
 }
 
+// 发表文章
+export const addArticles = params => {
+  console.log('params-->', params)
+  return request({
+    method: 'POST',
+    url: `/api/articles`,
+    data: params
+  })
+}
+
 // 用户点赞
 export const addFavorite = slug => {
-    return request({
+  return request({
     method: 'POST',
     url: `/api/articles/${slug}/favorite`
   })

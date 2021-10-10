@@ -26,32 +26,8 @@
             </ul>
           </div>
 
-          <div class="article-preview" v-for="art in articles" :key="art.slug">
-            <div class="article-meta">
-              <nuxt-link :to="{name: 'profile', params: { username: art.author.username }}"><img :src="art.author.image" /></nuxt-link>
-              <div class="info">
-                <nuxt-link :to="{name: 'profile', params: { username: art.author.username }}">{{art.author.username}}</nuxt-link>
-                <span class="date">{{ art.createdAt | date('MMM DD,YYYY')}}</span>
-              </div>
-              <button @click="onClickFavorite(art)" :disabled="art.favoriteDisabled" class="btn btn-outline-primary btn-sm pull-xs-right" :class="{ active: art.favorited }">
-                <i class="ion-heart"></i> {{art.favoritesCount}}
-              </button>
-            </div>
-            <nuxt-link :to="{name: 'article', params: { slug: art.slug }}" class="preview-link">
-              <h1>{{ art.title }}</h1>
-              <p>{{ art.description }}</p>
-              <span>Read more...</span>
-            </nuxt-link>
-          </div>
+          <article-list :api-url="api" :payload="payload"/>
 
-          <!-- 分页 -->
-          <nav>
-            <ul class="pagination">
-              <li class="page-item" :class="{ active: item === page}" v-for="item in totalPage" :key="item">
-                <nuxt-link :to="{ name: 'home', query: { page: item, tag: $route.query.tag, }}" class="page-link" href="">{{ item }}</nuxt-link>
-              </li>
-            </ul>
-          </nav>
         </div>
 
         <div class="col-md-3">
@@ -72,70 +48,43 @@
 </template>
 
 <script>
-import { getArticles, getFeedArticles, addFavorite, delteFavorite } from '@/api/article';
 import { getTags } from '@/api/tag';
 import { mapState } from 'vuex'
+import ArticleList from '../components/article-list.vue';
 
 export default {
   name: 'Article',
+  components: {
+    ArticleList
+  },
+  data() {
+    return {
+      api: '/api/articles'
+    }
+  },
   async asyncData ({ query }) {
-    const page = Number.parseInt(query.page || 1)
-    const limit = 20
     const { tag, tab } = query
 
     const tabName = tab || 'global_feed'
-    const methods = tabName === 'global_feed' ? getArticles : getFeedArticles
+    const api = tabName === 'global_feed' ? '/api/articles' : '/api/articles/feed'
 
-    const [ artRes, tagRes ] = await Promise.all([
-      methods({
-        limit,
-        offset: (page - 1) * limit,
-        tag
-      }),
-      getTags()
-    ])
- 
-    const { articles, articlesCount } = artRes.data
-    const { tags } = tagRes.data
-
-    // 标记快速点击时禁用点赞按钮
-    articles.forEach(article => article.favoriteDisabled = false);
+    const { data } = await getTags();
+    const payload = {
+      tag
+    }
 
     return {
-      articles,
-      articlesCount,
-      tagList: tags,
-      limit,
-      page,
+      tagList: data.tags,
       tag,
-      tab: tab || 'global_feed'
+      tab: tab || 'global_feed',
+      api,
+      payload
     }
   },
   // 监听路由参数变化，调用 asyncDate 刷新数据
   watchQuery: ['page', 'tag', 'tab'],
   computed: {
-    ...mapState(['user']),
-    totalPage() {
-      return  Math.ceil(this.articlesCount / this.limit)
-    }
-  },
-  methods: {
-    async onClickFavorite(article) {
-      article.favoriteDisabled = true;
-
-      const methods = article.favorited ? delteFavorite : addFavorite;
-      await methods(article.slug);
-
-      if (article.favorited) {
-        article.favorited = false;
-        article.favoritesCount -= 1;
-      } else {
-        article.favorited = true;
-        article.favoritesCount += 1;
-      }
-
-      article.favoriteDisabled = false;
-    }
+    ...mapState(['user'])
   }
 }
 </script>

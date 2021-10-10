@@ -5,7 +5,7 @@
         <textarea v-model="comment.body" class="form-control" placeholder="Write a comment..." rows="3"></textarea>
       </div>
       <div class="card-footer">
-        <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
+        <img :src="user.image" class="comment-author-img" />
         <button class="btn btn-sm btn-primary" @click="onSubmit">
           Post Comment
         </button>
@@ -31,6 +31,8 @@
 
 <script>
 import { getComments, addComments, deleteComments } from '@/api/article';
+import { mapState } from 'vuex';
+
 export default {
   name: 'ArticleComment',
   props: {
@@ -47,6 +49,9 @@ export default {
         body: '' // 文章评论内容
       }
     }
+  },
+  computed: {
+    ...mapState(['user'])
   },
   async mounted() {
     const { data } = await getComments(this.article.slug);
